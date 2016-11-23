@@ -1,0 +1,8 @@
+version: '2'
+services:
+    cse_337_project-sonar:
+        container_name: cse_337_project-sonar
+        image: sonarqube:6.1-alpine
+        ports:
+            - 9000:9000
+            - 9092:9092

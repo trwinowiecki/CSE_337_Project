@@ -1,0 +1,16 @@
+version: '2'
+services:
+    cse_337_project-app:
+        image: cse_337_project
+        external_links:
+            - cse_337_project-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/cse_337_project?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    cse_337_project-mysql:
+        extends:
+            file: mysql.yml
+            service: cse_337_project-mysql

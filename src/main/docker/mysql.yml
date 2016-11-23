@@ -1,0 +1,14 @@
+version: '2'
+services:
+    cse_337_project-mysql:
+        container_name: cse_337_project-mysql
+        image: mysql:5.7.13
+        # volumes:
+        #     - ~/volumes/jhipster/CSE_337_Project/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=cse_337_project
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl
